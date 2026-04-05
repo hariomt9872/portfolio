@@ -4,12 +4,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+            // Close mobile menu if open
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                navLinks.classList.remove('active');
+            }
+            
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
     });
+});
+
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Create mobile menu toggle if it doesn't exist
+    if (!document.querySelector('.nav-toggle')) {
+        const navContainer = document.querySelector('.nav-container');
+        const toggle = document.createElement('button');
+        toggle.className = 'nav-toggle';
+        toggle.innerHTML = '☰';
+        toggle.setAttribute('aria-label', 'Toggle navigation');
+        navContainer.appendChild(toggle);
+
+        const navLinks = document.querySelector('.nav-links');
+        
+        toggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-container')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    }
 });
 
 // Add some basic interactivity

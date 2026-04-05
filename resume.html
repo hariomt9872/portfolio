@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom Tiwary - Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #000;
+            background-color: #ffffff;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #000;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+        }
+
+        .entry {
+            margin-bottom: 12px;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .entry-subtitle {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .entry-meta {
+            font-size: 12px;
+        }
+
+        .entry-description {
+            margin-left: 20px;
+            font-size: 12px;
+        }
+
+        .entry-description li {
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .skill-category {
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+
+        .skill-category strong {
+            display: block;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .download-btn:hover {
+            background-color: #764ba2;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 0;
+            }
+            .controls {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="controls">
+            <a href="index.html" class="back-link">Back to Portfolio</a>
+            <button class="download-btn" onclick="downloadResume()">Download as PDF</button>
+        </div>
+
+        <div class="header">
+            <h1>Hariom Tiwary</h1>
+            <div class="contact-info">
+                Email: hariomtiwari9872@gmail.com | Phone: +91 7463909749 | LinkedIn: linkedin.com/in/hariomtiwary
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">EDUCATION</div>
+            <div class="entry">
+                <div class="entry-title">Bachelor of Technology in Computer Science and Engineering</div>
+                <div class="entry-meta">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai | July 2020 - June 2024</div>
+                <div class="entry-meta">CGPA: 7.95</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">SKILLS</div>
+            <div class="skill-category">
+                <strong>Programming Languages:</strong>
+                Python, Java, SQL
+            </div>
+            <div class="skill-category">
+                <strong>Machine Learning & AI:</strong>
+                Machine Learning, NLP, Generative AI, Deep Learning
+            </div>
+            <div class="skill-category">
+                <strong>Python Frameworks & Libraries:</strong>
+                NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch, Hugging Face Transformers, Flask, FastAPI, LangChain, LangGraph
+            </div>
+            <div class="skill-category">
+                <strong>Data Visualization & Analytics:</strong>
+                Power BI, Matplotlib
+            </div>
+            <div class="skill-category">
+                <strong>Big Data & Cloud:</strong>
+                Docker, Kubernetes, AWS
+            </div>
+            <div class="skill-category">
+                <strong>Databases:</strong>
+                MySQL
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+
+            <div class="entry">
+                <div class="entry-title">System Engineer - Government e-Marketplace (GeM)</div>
+                <div class="entry-meta">Tata Consultancy Services (TCS), India | July 2025 - Present</div>
+                <ul class="entry-description">
+                    <li>Developed ML-driven anomaly detection systems to identify abrupt pricing using product feature benchmarking.</li>
+                    <li>Built NLP-based models to detect intentional hiding via incorrect specifications and miscategorization.</li>
+                    <li>Designed graph-based network analysis frameworks to identify buyer-seller collusion and preferential procurement.</li>
+                    <li>Implemented rule-augmented ML pipelines to flag IP overlaps and behavioral linkages, mitigating rigged bidding.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">ILP Trainee - TCS Xperience Program</div>
+                <div class="entry-meta">Tata Consultancy Services (TCS) | April 2025 - July 2025</div>
+                <ul class="entry-description">
+                    <li>Completed comprehensive enterprise training in Python, Machine Learning, NLP, and cloud-based application development.</li>
+                    <li>Worked on hands-on mini-projects covering data preprocessing, model development, and evaluation workflows.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <div class="section-title">PROJECTS</div>
+
+            <div class="entry">
+                <div class="entry-title">Plant Disease Detection</div>
+                <div class="entry-meta">January 2024 - April 2024</div>
+                <ul class="entry-description">
+                    <li>Developed a machine learning-based computer vision application for real-time plant disease detection using deep learning models.</li>
+                    <li>Applied advanced image processing techniques and optimized models for dynamic agricultural environments.</li>
+                    <li>Achieved high accuracy in identifying various plant diseases to assist farmers in early intervention.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Sentiment Analysis on Amazon Reviews</div>
+                <ul class="entry-description">
+                    <li>Performed comprehensive exploratory data analysis (EDA) on large-scale review datasets.</li>
+                    <li>Built a BERT-based sentiment classification model achieving 89% accuracy.</li>
+                    <li>Created WordCloud visualizations to extract key review themes and insights.</li>
+                    <li>Deployed the production-ready model using Flask, enabling real-time sentiment predictions for e-commerce platforms.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <div class="section-title">CERTIFICATIONS</div>
+            <div class="entry">
+                <ul class="entry-description">
+                    <li>AWS Cloud Quest - Amazon Web Services (April 2022)</li>
+                    <li>Google Cloud Certified - Generative AI Leader (July 2025, Credential ID: 6807)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Awards & Achievements -->
+        <div class="section">
+            <div class="section-title">AWARDS & ACHIEVEMENTS</div>
+            <div class="entry">
+                <ul class="entry-description">
+                    <li>Beyond Performance Award - Special Initiative, Tata Consultancy Services (December 2025)</li>
+                    <li>1st Rank, HackOverflow V2.0 - 36-hour National Level Hackathon (April 2022)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Volunteer Experience -->
+        <div class="section">
+            <div class="section-title">VOLUNTEER EXPERIENCE</div>
+            <div class="entry">
+                <div class="entry-title">Event Coordinator</div>
+                <div class="entry-meta">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology</div>
+                <ul class="entry-description">
+                    <li>Coordinated a 36-hour hackathon event for over 1800 students, managing logistics, participant engagement, and overall event execution.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadResume() {
+            const element = document.querySelector('.resume-container');
+            const opt = {
+                margin: 10,
+                filename: 'Hariom_Tiwary_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, allowTaint: true },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html>
